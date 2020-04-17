@@ -1,35 +1,38 @@
 # Ludo-help-for-tools-of-AI
 The C++ Ludo code on Black Board contains game play bugs and bad code design.
 
-<strong>To make the code build and run:</strong><br/> 
-	1) Rename View.pro to Ludo.pro<br/> 
-	2) In Ludo.pro change Target = View to Target = Ludo<br/> 
-	3) In game.cpp method run() out comment emit close();<br/> 
-	4) In ludo_player_random.cpp add #include \<random\><br/> 
-
+<strong>To make the code build and run:</strong><br/>
+	<ol>
+	<li>Rename View.pro to Ludo.pro</li>
+	<li>In Ludo.pro change Target = View to Target = Ludo</li>
+	<li>In game.cpp method run() out comment emit close();</li>
+	<li>In ludo_player_random.cpp add #include \<random\></li>
+	</ol>
+	
 <strong>To expose the bugs:</strong><br/>
-	1) Download the test_game.h and test_game.cpp files from this repository<br/> 
-	2) Add test_game.h and test_game.cpp to your Ludo.pro file<br/> 
-	3) Add #include "test_game.h" in main.cpp<br/> 
-	4) In game.h changed form this<br/> 
+	<ol>
+	<li>Download the test_game.h and test_game.cpp files from this repository</li>
+	<li>Add test_game.h and test_game.cpp to your Ludo.pro file</li>
+	<li>Add #include "test_game.h" in main.cpp</li>
+	<li>In game.h changed form this<br/> 
 		    class game : public QThread<br/> 
 		    {<br/> 
 	   into this instead<br/> 
 		    class test_game;<br/> 
 		    class game : public QThread<br/> 
 		    {<br/> 
-    			friend class test_game;<br/> 
-	5) In main.cpp just before g.start(); add<br/> 
+    			friend class test_game;</li>
+	<li>In main.cpp just before g.start(); add<br/> 
 		    test_game test;<br/> 
-		    test.run_all_tests();<br/> 
-  6) In game.cpp game::reset() change this:<br/> 
+		    test.run_all_tests();</li>
+	<li>In game.cpp game::reset() change this:<br/> 
 		    for(auto i : player_positions){<br/> 
 	        	i = -1; }<br/> 
      into this instead<br/> 
         for(int i = 0; i < player_positions.size(); i++)<br/> 
-        		player_positions[i] = -1;<br/> 
-  7) Build and run program 
-
+        		player_positions[i] = -1;</li>
+	<li>Build and run program</li>
+	</ol>
 <strong>Then 6 of the unit tests in test_game.cpp should fail:</strong><br/> 
 	1) 'test_rel_pos_outfield_special'<br/> 
       Wrong absolute to relative position transformation of a piece on absolute square 51.<br/> 
