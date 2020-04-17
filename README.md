@@ -2,12 +2,12 @@
 The C++ Ludo code on Black Board contains game play bugs and bad code design.
 
 <strong>To make the code build and run:</strong>
-<ol>
+	<ol>
 	<li>Rename View.pro to Ludo.pro</li>
 	<li>In Ludo.pro change Target = View to Target = Ludo</li>
 	<li>In game.cpp method run() out comment emit close();</li>
 	<li>In ludo_player_random.cpp add #include \<random\></li>
-</ol>
+	</ol>
 	
 <strong>To expose the bugs:</strong>
 	<ol>
