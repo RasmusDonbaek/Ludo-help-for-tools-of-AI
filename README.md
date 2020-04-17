@@ -2,12 +2,12 @@
 The C++ Ludo code on Black Board contains game play bugs and bad code design.
 
 <strong>To make the code build and run:</strong>
-	<ol>
+<ol>
 	<li>Rename View.pro to Ludo.pro</li>
 	<li>In Ludo.pro change Target = View to Target = Ludo</li>
 	<li>In game.cpp method run() out comment emit close();</li>
 	<li>In ludo_player_random.cpp add #include \<random\></li>
-	</ol>
+</ol>
 	
 <strong>To expose the bugs:</strong>
 	<ol>
@@ -61,7 +61,7 @@ The C++ Ludo code on Black Board contains game play bugs and bad code design.
 		  You can avoid making a move even if you have legal move options</li>
 	</ol>
 <strong>A quick sanity check</strong> is to have 4 'ludo_player_ramdon' players play many games against each other.<br/> 
-If they ecah take turn starting they are all expected to win 25% of the time. <br/> 
+If they ecah take turn starting the game they are all expected to win 25% of the time. <br/> 
 For me player_0 only wins ~ 18% and player_3 wins ~ 40% of the games, showing a significant bias.<br/> 
 
 Code fixes for the bugs and bad software design will be uploaded shortly.
