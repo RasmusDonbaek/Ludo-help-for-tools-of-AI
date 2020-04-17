@@ -14,23 +14,33 @@ The C++ Ludo code on Black Board contains game play bugs and bad code design.
 	<li>Download the test_game.h and test_game.cpp files from this repository</li>
 	<li>Add test_game.h and test_game.cpp to your Ludo.pro file</li>
 	<li>Add #include "test_game.h" in main.cpp</li>
-	<li>In game.h changed form this<br/> 
-		    class game : public QThread<br/> 
-		    {<br/> 
-	   into this instead<br/> 
-		    class test_game;<br/> 
-		    class game : public QThread<br/> 
-		    {<br/> 
-    			friend class test_game;</li>
-	<li>In main.cpp just before g.start(); add<br/> 
+	<li>In game.h changed form this
+		<blockquote>
+			class game : public QThread<br/> 
+		    	{
+		</blockquote>
+	   into this instead
+		<blockquote>
+			class test_game;<br/> 
+		    	class game : public QThread<br/> 
+		    	{<br/> 
+    			friend class test_game;
+		</blockquote></li>
+	<li>In main.cpp just before g.start(); add
+		<blockquote>
 		    test_game test;<br/> 
-		    test.run_all_tests();</li>
-	<li>In game.cpp game::reset() change this:<br/> 
+		    test.run_all_tests();
+		</blockquote></li>
+	<li>In game.cpp game::reset() change this:
+		<blockquote>
 		    for(auto i : player_positions){<br/> 
-	        	i = -1; }<br/> 
-     into this instead<br/> 
-        for(int i = 0; i < player_positions.size(); i++)<br/> 
-        		player_positions[i] = -1;</li>
+	        	i = -1; }<br/>
+		</blockquote>
+     into this instead
+		<blockquote>
+        		for(int i = 0; i < player_positions.size(); i++)<br/> 
+        			player_positions[i] = -1;
+		</blockquote></li>
 	<li>Build and run program</li>
 	</ol>
 <strong>Then 6 of the unit tests in test_game.cpp should fail:</strong><br/>
