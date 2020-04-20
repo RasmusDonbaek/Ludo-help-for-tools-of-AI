@@ -2,6 +2,7 @@
 #define TEST_GAME_H
 
 #include "game.h"
+#include <string>
 
 class test_game
 {
