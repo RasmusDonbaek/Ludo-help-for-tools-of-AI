@@ -1,5 +1,5 @@
-# Ludo-help-for-tools-of-AI
-The C++ Ludo code on Black Board contains game play bugs and bad code design.
+# Unittest the C++ Ludo code from Black Board
+The C++ Ludo code on Black Board contains game play bugs and bad code design.<br/>
 <strong>The bugs are:</strong>
 <ol>
 <li>The game::reset() function, does not reset the game.
