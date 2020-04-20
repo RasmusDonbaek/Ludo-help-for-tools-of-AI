@@ -10,7 +10,7 @@ The C++ Ludo code on Black Board contains game play bugs and bad code design.<br
 <li>You send your own piece home if you land a third piece on the same square.
 <li>You can avoid making a move even if you have legal move options.
 </ol>
-<strong>To see this for yourself, you can:</strong>
+<strong>To see this for yourself:</strong>
 <ol>
 <li>Download the test_game.h and test_game.cpp files from this repository and add them to your project</li>
 <li>Add #include "test_game.h" in main.cpp</li>
@@ -43,7 +43,7 @@ The C++ Ludo code on Black Board contains game play bugs and bad code design.<br
 		</blockquote></li>
 	<li>Build and run program</li>
 	</ol>
-<strong>Then 6 of the unit tests in test_game.cpp should fail:</strong><br/>
+Then 6 of the unit tests in test_game.cpp should fail:<br/><br/>
 <strong>A quick sanity check</strong> is to have 4 'ludo_player_ramdon' players play many games against each other.<br/> 
 If they ecah take turn starting the game they are all expected to win 25% of the time. <br/> 
 For me player_0 only wins ~ 18% and player_3 wins ~ 40% of the games, showing a significant bias.<br/> 
