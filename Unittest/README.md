@@ -10,7 +10,7 @@ The C++ Ludo code on Black Board contains game play bugs and bad code design.<br
 <li>You send your own piece home if you land a third piece on the same square.
 <li>You can avoid making a move even if you have legal move options.
 </ol>
-To see this for yourself, you can:
+<strong>To see this for yourself, you can:</strong>
 <ol>
 <li>Download the test_game.h and test_game.cpp files from this repository and add them to your project</li>
 <li>Add #include "test_game.h" in main.cpp</li>
